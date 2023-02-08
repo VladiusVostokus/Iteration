@@ -1,21 +1,14 @@
 'use strict';
 
-const max = matrix => {
-  const maxValues = matrix.flat(Infinity);
-  for (const i in maxValues) {
-    
+const max = (matrix) => {
+  let value = matrix[0][0];
+  for (const row of matrix) {
+    for (const number of row) {
+      if (number > value) value = number;
+    }
   }
+  return value;
 };
 
 module.exports = { max };
 
-/*const maxValues = [];
-  for (const i of matrix) {
-    for (const j of i) {
-      maxValues.push(j);
-    }
-  }
-  let res = 0;
-  for (const maximun of maxValues) {
-  }
-*/
